@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Contact Page</title>
+</head>
+<body>
+    <header>
+        <img src="sources/adalogonew.png" alt="ADA University Logo" class="w3-border w3-padding" width="150px">
+        <nav style="background-color: #f8f9fa; padding: 10px; border-radius: 5px;">
+            <a href="index.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Home</a>
+            <a href="education.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Education</a>
+            <a href="contact.html" style="font-weight:bold; text-decoration: none; color: black;">Contact Me</a>
+        </nav>
+    </header>
+    <h1>Contact Me</h1>
+    <form action="index.html" method="get">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="number" id="phone" name="phone" required><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+        <label>Preferred Contact Method:</label><br>
+        <input type="checkbox" id="contact-email" name="contact-method" value="email">
+        <label for="contact-email">Email</label><br>
+        <input type="checkbox" id="contact-phone" name="contact-method" value="phone">
+        <label for="contact-phone">Phone</label><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br><br>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <footer>
+        <p>&copy; 2024 Vidadi Nabiyev</p>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const queryString = new URLSearchParams(formData).toString();
+            window.location.href = 'index.html?' + queryString;
+        });
+    </script>
+</body>
+</html>
