@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/sources/favicon.ico">
+</head>
+<body>
+    <header>
+        <img src="sources/adalogonew.png" alt="ADA University Logo" class="w3-border w3-padding" width="150px">
+        <nav style="background-color: #ffffff; padding: 10px; border-radius: 5px;">
+            <a href="index.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Home</a>
+            <a href="education.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Education</a>
+            <a href="contact.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Contact Me</a>
+            <a href="questionnaire.html" style="font-weight:bold; margin-right: 15px; text-decoration: none; color: black;">Questionnaire</a>
+            <a href="schedule.html" style="font-weight:bold; text-decoration: none; color: black;">Schedule</a>
+        </nav>
+    </header>
+    <h1>Feedback Questionnaire</h1>
+    <form action="index.html" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="14" max="100" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="interests">Select your interests:</label><br>
+        <input type="checkbox" id="sports" name="interests[]" value="sports">
+        <label for="sports">Sports</label><br>
+        <input type="checkbox" id="music" name="interests[]" value="music">
+        <label for="music">Music</label><br>
+        <input type="checkbox" id="tech" name="interests[]" value="tech">
+        <label for="tech">Technology</label><br>
+        <input type="checkbox" id="gaming" name="interests[]" value="gaming">
+        <label for="gaming">Gaming</label><br>
+        <input type="checkbox" id="travel" name="interests[]" value="travel">
+        <label for="travel">Travel</label><br><br>
+        <br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="azerbaijan">Azerbaijan</option>
+            <option value="turkey">Turkey</option>
+            <option value="usa">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="germany">Germany</option>
+            <option value="spain">Spain</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="feedback">Additional Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+
+        <label for="date">Select a preferred contact date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Preferred contact time:</label><br>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const queryString = new URLSearchParams(formData).toString();
+            window.location.href = 'index.html?' + queryString;
+        });
+    </script>
+    </form>
+</body>
+<footer>
+    <p>&copy; 2024 Vidadi Nabiyev</p>
+</footer>
+</html>
